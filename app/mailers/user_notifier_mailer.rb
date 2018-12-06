@@ -12,10 +12,3 @@ class UserNotifierMailer < ApplicationMailer
   #  def cancel_account(user, admin, content)
   #  end
 end
-
-UserNotifier
-MailerPassword
-User_token : ABCD / CDFRG
-Pass_token : sha256
-
-VARIABLES DE ENTORNO PARA TRABAJAR EN DEVELOPMENT / PRODUCTION
