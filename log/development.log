@@ -9988,3 +9988,1078 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 136ms (Views: 110.5ms | ActiveRecord: 3.3ms)
 
 
+  [1m[36mSubscriptor Load (1.2ms)[0m  [1m[34mSELECT  "subscriptors".* FROM "subscriptors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSubscriptor Load (0.3ms)[0m  [1m[34mSELECT  "subscriptors".* FROM "subscriptors" ORDER BY "subscriptors"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-12-05 21:00:04 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7XR0MOEiX9aDzZdhqryHsknsqFSVv8uzs4nJMWyzAvijt2lUzQmt8wO2z2iZbgCpLfBYCYe+r0Zv8jOXI1J5OQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/cesarrengifo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cesarrengifo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cesarrengifo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-05 21:00:04 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered layouts/_alerts.html.erb (0.3ms)
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-12-05 21:00:09 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Shoes"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? ORDER BY "posts"."id" DESC LIMIT ?[0m  [["category_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Jeans"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? ORDER BY "posts"."id" DESC LIMIT ?[0m  [["category_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_sign_in.html.erb (0.4ms)
+  Rendered posts/_header.html.erb (2.6ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_categories.html.erb:3
+  Rendered posts/_categories.html.erb (1.4ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+  Rendered posts/_cards.html.erb (2.4ms)
+  Rendered posts/_jumbotron.html.erb (4.5ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:27
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:27
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:43
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered posts/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 90ms (Views: 68.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/subscriptors/new" for 127.0.0.1 at 2018-12-05 21:00:11 -0500
+Processing by SubscriptorsController#new as HTML
+  Rendering subscriptors/new.html.erb within layouts/signin
+  Rendered subscriptors/new.html.erb within layouts/signin (3.8ms)
+Completed 200 OK in 24ms (Views: 15.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/subscriptors/new" for 127.0.0.1 at 2018-12-05 21:00:11 -0500
+Processing by SubscriptorsController#new as HTML
+  Rendering subscriptors/new.html.erb within layouts/signin
+  Rendered subscriptors/new.html.erb within layouts/signin (2.8ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/subscriptors" for 127.0.0.1 at 2018-12-05 21:00:27 -0500
+Processing by SubscriptorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k3j5fy46aC9sDGkrOFzZuKdZIUypm05H4i29mqDUjfnQ7kmXSBFt2rmyOEtJHjIKX4/yiIilCZG399jZ776sUQ==", "subscriptor"=>{"name"=>"PruebaFuego", "email"=>"Fuego@fuego.com"}, "commit"=>"Create Subscriptor"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subscriptors_controller.rb:11
+  [1m[36mSubscriptor Create (0.3ms)[0m  [1m[32mINSERT INTO "subscriptors" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PruebaFuego"], ["email", "Fuego@fuego.com"], ["created_at", "2018-12-06 02:00:27.410361"], ["updated_at", "2018-12-06 02:00:27.410361"]]
+  ↳ app/controllers/subscriptors_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subscriptors_controller.rb:11
+  Rendering user_notifier_mailer/send_signup_email.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/send_signup_email.html.erb within layouts/mailer (0.3ms)
+UserNotifierMailer#send_signup_email: processed outbound mail in 27.8ms
+Sent mail to Fuego@fuego.com (4.5ms)
+Date: Wed, 05 Dec 2018 21:00:27 -0500
+From: hello@amazon-clone.com
+To: Fuego@fuego.com
+Message-ID: <5c0882bb6cd04_7173fd2ce3434fc32035@Cesars-MacBook-Pro.local.mail>
+Subject: Thanks for subscribe to our amazing app
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Thanks for signing up, PruebaFuego</h1>
+   <p>
+    This App fucking works!!!!
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 41ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-12-05 21:00:27 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Shoes"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? ORDER BY "posts"."id" DESC LIMIT ?[0m  [["category_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Jeans"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? ORDER BY "posts"."id" DESC LIMIT ?[0m  [["category_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_sign_in.html.erb (0.5ms)
+  Rendered posts/_header.html.erb (2.5ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_categories.html.erb:3
+  Rendered posts/_categories.html.erb (1.3ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+  Rendered posts/_cards.html.erb (2.3ms)
+  Rendered posts/_jumbotron.html.erb (4.1ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:27
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:27
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:43
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered posts/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 71ms (Views: 64.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-12-05 21:00:36 -0500
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-05 21:00:36 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/signin
+  Rendered layouts/_alerts.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/signin (8.3ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-05 21:00:45 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tyE72qq5yPuxXYVRfMqLS7HkeEY9V1pLmk3PsrQ31gtUKMkfttC85+blAyjdojOxLbMLQrAgAWDLw8Vt2smTgQ==", "user"=>{"email"=>"crengi94@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "crengi94@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/cesarrengifo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/posts/new
+Completed 302 Found in 110ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-12-05 21:00:45 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/cesarrengifo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mSubscriptor Load (0.1ms)[0m  [1m[34mSELECT "subscriptors".* FROM "subscriptors"[0m
+  ↳ app/models/user.rb:20
+  Rendered layouts/_sign_in.html.erb (0.3ms)
+  Rendered posts/_header.html.erb (2.9ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_categories.html.erb:3
+  Rendered posts/_categories.html.erb (1.0ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:36
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered posts/_form.html.erb (11.6ms)
+  Rendered posts/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 60ms (Views: 57.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-12-05 21:01:08 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a1lMbUOot/WNJmIcfnEYhiCUJSDO2hlVIgmAzC2JnCmagobh3O3olJI3thqlVlsCigYvp2JPTXPq+urDIHgLKQ==", "post"=>{"category_id"=>"10", "title"=>"Fuego fuego", "content"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium purus eget ligula hendrerit euismod. Fusce gravida nisl non orci vestibulum, ut pretium sapien finibus. Nam sit amet pellentesque lacus, vitae mattis orci. Etiam non felis leo. Donec auctor ante sit amet sagittis varius. Quisque vulputate est et pretium pharetra. Quisque pharetra bibendum eros, semper lacinia enim dictum a. Sed magna nulla, consectetur ut mi eu, molestie porta lacus. Vestibulum at mauris mi. Nullam mollis, mauris eget efficitur finibus, risus massa tempor lacus, sit amet bibendum nisl dui sed nisi. Proin commodo venenatis efficitur. Vestibulum tristique enim nec erat laoreet, sit amet porta lectus suscipit. Nam imperdiet hendrerit quam quis lobortis. Pellentesque sed erat pellentesque, aliquam erat ac, pulvinar arcu.\r\n\r\nVestibulum condimentum varius convallis. Donec eu lectus sit amet ex fermentum porta ac ut lorem. Aliquam erat volutpat. Vivamus facilisis massa quis elementum mollis. Nullam aliquet vitae elit a sagittis. Nunc pellentesque consequat sodales. Vivamus porttitor, massa at ultricies lacinia, nisi dolor sodales turpis, pretium maximus nibh massa tincidunt purus. Donec in ornare ipsum. Sed nec malesuada risus, sit amet efficitur dolor. Ut posuere, sem id feugiat auctor, arcu libero cursus nulla, sed iaculis dolor tellus ac est. Proin nec mi nisl. Proin rhoncus turpis felis, nec sodales risus varius luctus. Nulla fermentum lacus nec arcu sagittis tempor. Quisque id feugiat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n\r\nIn hac habitasse platea dictumst. Sed eu elit mi. Phasellus venenatis lobortis turpis ac fringilla. Mauris sit amet turpis orci. Curabitur cursus bibendum felis at ultricies. Vivamu"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/cesarrengifo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "content", "created_at", "updated_at", "category_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Fuego fuego"], ["content", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium purus eget ligula hendrerit euismod. Fusce gravida nisl non orci vestibulum, ut pretium sapien finibus. Nam sit amet pellentesque lacus, vitae mattis orci. Etiam non felis leo. Donec auctor ante sit amet sagittis varius. Quisque vulputate est et pretium pharetra. Quisque pharetra bibendum eros, semper lacinia enim dictum a. Sed magna nulla, consectetur ut mi eu, molestie porta lacus. Vestibulum at mauris mi. Nullam mollis, mauris eget efficitur finibus, risus massa tempor lacus, sit amet bibendum nisl dui sed nisi. Proin commodo venenatis efficitur. Vestibulum tristique enim nec erat laoreet, sit amet porta lectus suscipit. Nam imperdiet hendrerit quam quis lobortis. Pellentesque sed erat pellentesque, aliquam erat ac, pulvinar arcu.\r\n\r\nVestibulum condimentum varius convallis. Donec eu lectus sit amet ex fermentum porta ac ut lorem. Aliquam erat volutpat. Vivamus facilisis massa quis elementum mollis. Nullam aliquet vitae elit a sagittis. Nunc pellentesque consequat sodales. Vivamus porttitor, massa at ultricies lacinia, nisi dolor sodales turpis, pretium maximus nibh massa tincidunt purus. Donec in ornare ipsum. Sed nec malesuada risus, sit amet efficitur dolor. Ut posuere, sem id feugiat auctor, arcu libero cursus nulla, sed iaculis dolor tellus ac est. Proin nec mi nisl. Proin rhoncus turpis felis, nec sodales risus varius luctus. Nulla fermentum lacus nec arcu sagittis tempor. Quisque id feugiat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n\r\nIn hac habitasse platea dictumst. Sed eu elit mi. Phasellus venenatis lobortis turpis ac fringilla. Mauris sit amet turpis orci. Curabitur cursus bibendum felis at ultricies. Vivamu"], ["created_at", "2018-12-06 02:01:08.064419"], ["updated_at", "2018-12-06 02:01:08.064419"], ["category_id", 10]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = ?[0m  [["role", 0]]
+  ↳ app/controllers/posts_controller.rb:47
+  Rendering user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer (0.3ms)
+UserNotifierMailer#new_post_notifying_user: processed outbound mail in 35.8ms
+Sent mail to xnk92145@iencm.com (4.8ms)
+Date: Wed, 05 Dec 2018 21:01:08 -0500
+From: hello@amazon-clone.com
+To: xnk92145@iencm.com
+Message-ID: <5c0882e4197ea_7173fd2ce3434fc32160@Cesars-MacBook-Pro.local.mail>
+Subject: Fuego fuego - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Fuego fuego</h1>
+   <p>
+   We have a new post for you. <br>
+   <a href="https://amazon-cesar.herokuapp.com/posts/13">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_user: processed outbound mail in 23.9ms
+Sent mail to asdamkda@sdada.com (5.7ms)
+Date: Wed, 05 Dec 2018 21:01:08 -0500
+From: hello@amazon-clone.com
+To: asdamkda@sdada.com
+Message-ID: <5c0882e4209d4_7173fd2ce3434fc3229@Cesars-MacBook-Pro.local.mail>
+Subject: Fuego fuego - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Fuego fuego</h1>
+   <p>
+   We have a new post for you. <br>
+   <a href="https://amazon-cesar.herokuapp.com/posts/13">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_user: processed outbound mail in 22.9ms
+Sent mail to dasda@dkasda.com (3.5ms)
+Date: Wed, 05 Dec 2018 21:01:08 -0500
+From: hello@amazon-clone.com
+To: dasda@dkasda.com
+Message-ID: <5c0882e427b5e_7173fd2ce3434fc32373@Cesars-MacBook-Pro.local.mail>
+Subject: Fuego fuego - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Fuego fuego</h1>
+   <p>
+   We have a new post for you. <br>
+   <a href="https://amazon-cesar.herokuapp.com/posts/13">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[36mSubscriptor Load (0.2ms)[0m  [1m[34mSELECT "subscriptors".* FROM "subscriptors"[0m
+  ↳ app/controllers/posts_controller.rb:52
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 1.8ms)
+
+
+  
+NameError (undefined local variable or method `user_email' for #<PostsController:0x00007fa5a448dd88>
+Did you mean?  user_session_url):
+  
+app/controllers/posts_controller.rb:54:in `block in create'
+app/controllers/posts_controller.rb:52:in `create'
+Started POST "/posts" for 127.0.0.1 at 2018-12-05 21:02:13 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a1lMbUOot/WNJmIcfnEYhiCUJSDO2hlVIgmAzC2JnCmagobh3O3olJI3thqlVlsCigYvp2JPTXPq+urDIHgLKQ==", "post"=>{"category_id"=>"10", "title"=>"Hielo Hielo mucho Hielo", "content"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium purus eget ligula hendrerit euismod. Fusce gravida nisl non orci vestibulum, ut pretium sapien finibus. Nam sit amet pellentesque lacus, vitae mattis orci. Etiam non felis leo. Donec auctor ante sit amet sagittis varius. Quisque vulputate est et pretium pharetra. Quisque pharetra bibendum eros, semper lacinia enim dictum a. Sed magna nulla, consectetur ut mi eu, molestie porta lacus. Vestibulum at mauris mi. Nullam mollis, mauris eget efficitur finibus, risus massa tempor lacus, sit amet bibendum nisl dui sed nisi. Proin commodo venenatis efficitur. Vestibulum tristique enim nec erat laoreet, sit amet porta lectus suscipit. Nam imperdiet hendrerit quam quis lobortis. Pellentesque sed erat pellentesque, aliquam erat ac, pulvinar arcu.\r\n\r\nVestibulum condimentum varius convallis. Donec eu lectus sit amet ex fermentum porta ac ut lorem. Aliquam erat volutpat. Vivamus facilisis massa quis elementum mollis. Nullam aliquet vitae elit a sagittis. Nunc pellentesque consequat sodales. Vivamus porttitor, massa at ultricies lacinia, nisi dolor sodales turpis, pretium maximus nibh massa tincidunt purus. Donec in ornare ipsum. Sed nec malesuada risus, sit amet efficitur dolor. Ut posuere, sem id feugiat auctor, arcu libero cursus nulla, sed iaculis dolor tellus ac est. Proin nec mi nisl. Proin rhoncus turpis felis, nec sodales risus varius luctus. Nulla fermentum lacus nec arcu sagittis tempor. Quisque id feugiat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n\r\nIn hac habitasse platea dictumst. Sed eu elit mi. Phasellus venenatis lobortis turpis ac fringilla. Mauris sit amet turpis orci. Curabitur cursus bibendum felis at ultricies. Vivamu"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/cesarrengifo/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "content", "created_at", "updated_at", "category_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Hielo Hielo mucho Hielo"], ["content", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium purus eget ligula hendrerit euismod. Fusce gravida nisl non orci vestibulum, ut pretium sapien finibus. Nam sit amet pellentesque lacus, vitae mattis orci. Etiam non felis leo. Donec auctor ante sit amet sagittis varius. Quisque vulputate est et pretium pharetra. Quisque pharetra bibendum eros, semper lacinia enim dictum a. Sed magna nulla, consectetur ut mi eu, molestie porta lacus. Vestibulum at mauris mi. Nullam mollis, mauris eget efficitur finibus, risus massa tempor lacus, sit amet bibendum nisl dui sed nisi. Proin commodo venenatis efficitur. Vestibulum tristique enim nec erat laoreet, sit amet porta lectus suscipit. Nam imperdiet hendrerit quam quis lobortis. Pellentesque sed erat pellentesque, aliquam erat ac, pulvinar arcu.\r\n\r\nVestibulum condimentum varius convallis. Donec eu lectus sit amet ex fermentum porta ac ut lorem. Aliquam erat volutpat. Vivamus facilisis massa quis elementum mollis. Nullam aliquet vitae elit a sagittis. Nunc pellentesque consequat sodales. Vivamus porttitor, massa at ultricies lacinia, nisi dolor sodales turpis, pretium maximus nibh massa tincidunt purus. Donec in ornare ipsum. Sed nec malesuada risus, sit amet efficitur dolor. Ut posuere, sem id feugiat auctor, arcu libero cursus nulla, sed iaculis dolor tellus ac est. Proin nec mi nisl. Proin rhoncus turpis felis, nec sodales risus varius luctus. Nulla fermentum lacus nec arcu sagittis tempor. Quisque id feugiat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n\r\nIn hac habitasse platea dictumst. Sed eu elit mi. Phasellus venenatis lobortis turpis ac fringilla. Mauris sit amet turpis orci. Curabitur cursus bibendum felis at ultricies. Vivamu"], ["created_at", "2018-12-06 02:02:13.785041"], ["updated_at", "2018-12-06 02:02:13.785041"], ["category_id", 10]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = ?[0m  [["role", 0]]
+  ↳ app/controllers/posts_controller.rb:47
+  Rendering user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer (0.3ms)
+UserNotifierMailer#new_post_notifying_user: processed outbound mail in 25.0ms
+Sent mail to xnk92145@iencm.com (3.7ms)
+Date: Wed, 05 Dec 2018 21:02:13 -0500
+From: hello@amazon-clone.com
+To: xnk92145@iencm.com
+Message-ID: <5c088325c80d7_7173fd2ce3433583247b@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. <br>
+   <a href="https://amazon-cesar.herokuapp.com/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_user: processed outbound mail in 23.0ms
+Sent mail to asdamkda@sdada.com (3.6ms)
+Date: Wed, 05 Dec 2018 21:02:13 -0500
+From: hello@amazon-clone.com
+To: asdamkda@sdada.com
+Message-ID: <5c088325ceb22_7173fd2ce34335832545@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. <br>
+   <a href="https://amazon-cesar.herokuapp.com/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_user.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_user: processed outbound mail in 22.3ms
+Sent mail to dasda@dkasda.com (3.9ms)
+Date: Wed, 05 Dec 2018 21:02:13 -0500
+From: hello@amazon-clone.com
+To: dasda@dkasda.com
+Message-ID: <5c088325d51f8_7173fd2ce34335832687@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. <br>
+   <a href="https://amazon-cesar.herokuapp.com/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  [1m[36mSubscriptor Load (0.2ms)[0m  [1m[34mSELECT "subscriptors".* FROM "subscriptors"[0m
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.4ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 27.5ms
+Sent mail to berne@gmail.com (4.0ms)
+Date: Wed, 05 Dec 2018 21:02:13 -0500
+From: hello@amazon-clone.com
+To: berne@gmail.com
+Message-ID: <5c088325dde8a_7173fd2ce34335832748@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 24.1ms
+Sent mail to alonso@gmail.com (4.1ms)
+Date: Wed, 05 Dec 2018 21:02:13 -0500
+From: hello@amazon-clone.com
+To: alonso@gmail.com
+Message-ID: <5c088325e510d_7173fd2ce3433583287e@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 22.8ms
+Sent mail to montoya@gmail.com (3.7ms)
+Date: Wed, 05 Dec 2018 21:02:13 -0500
+From: hello@amazon-clone.com
+To: montoya@gmail.com
+Message-ID: <5c088325ebc6b_7173fd2ce34335832998@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 23.3ms
+Sent mail to torres@gmail.com (8.0ms)
+Date: Wed, 05 Dec 2018 21:02:13 -0500
+From: hello@amazon-clone.com
+To: torres@gmail.com
+Message-ID: <5c088325f2757_7173fd2ce343358330d0@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 22.5ms
+Sent mail to crengi94@gmail.com (3.9ms)
+Date: Wed, 05 Dec 2018 21:02:14 -0500
+From: hello@amazon-clone.com
+To: crengi94@gmail.com
+Message-ID: <5c0883265e16_7173fd2ce34335833180@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 22.6ms
+Sent mail to gcv49429@ebbob.com (3.7ms)
+Date: Wed, 05 Dec 2018 21:02:14 -0500
+From: hello@amazon-clone.com
+To: gcv49429@ebbob.com
+Message-ID: <5c088326c727_7173fd2ce343358332a0@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 22.1ms
+Sent mail to gcv49429@ebbob.com (3.6ms)
+Date: Wed, 05 Dec 2018 21:02:14 -0500
+From: hello@amazon-clone.com
+To: gcv49429@ebbob.com
+Message-ID: <5c08832612d59_7173fd2ce343358333f9@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 22.1ms
+Sent mail to gcv49429@ebbob.com (3.6ms)
+Date: Wed, 05 Dec 2018 21:02:14 -0500
+From: hello@amazon-clone.com
+To: gcv49429@ebbob.com
+Message-ID: <5c0883261931e_7173fd2ce34335833416@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 24.1ms
+Sent mail to gcv49429@ebbob.com (4.9ms)
+Date: Wed, 05 Dec 2018 21:02:14 -0500
+From: hello@amazon-clone.com
+To: gcv49429@ebbob.com
+Message-ID: <5c088326201f9_7173fd2ce343358335a8@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 23.5ms
+Sent mail to qih48001@iencm.com (3.6ms)
+Date: Wed, 05 Dec 2018 21:02:14 -0500
+From: hello@amazon-clone.com
+To: qih48001@iencm.com
+Message-ID: <5c088326271c8_7173fd2ce343358336e6@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 22.4ms
+Sent mail to xnk92145@iencm.com (3.6ms)
+Date: Wed, 05 Dec 2018 21:02:14 -0500
+From: hello@amazon-clone.com
+To: xnk92145@iencm.com
+Message-ID: <5c0883262d8bf_7173fd2ce343358337c5@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+  Rendering user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/new_post_notifying_subscriptor.html.erb within layouts/mailer (0.1ms)
+UserNotifierMailer#new_post_notifying_subscriptor: processed outbound mail in 23.6ms
+Sent mail to Fuego@fuego.com (3.9ms)
+Date: Wed, 05 Dec 2018 21:02:14 -0500
+From: hello@amazon-clone.com
+To: Fuego@fuego.com
+Message-ID: <5c08832634562_7173fd2ce34335833830@Cesars-MacBook-Pro.local.mail>
+Subject: Hielo Hielo mucho Hielo - New blog post on Amazon-Center
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Hielo Hielo mucho Hielo</h1>
+   <p>
+   We have a new post for you. our favorite subscriber! <br>
+   <a href="http://localhost:3000/posts/14">Click here</a>
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 457ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-12-05 21:02:14 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Shoes"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? ORDER BY "posts"."id" DESC LIMIT ?[0m  [["category_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Jeans"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? ORDER BY "posts"."id" DESC LIMIT ?[0m  [["category_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_header.html.erb:4
+  [1m[36mSubscriptor Load (0.1ms)[0m  [1m[34mSELECT "subscriptors".* FROM "subscriptors"[0m
+  ↳ app/models/user.rb:20
+  Rendered layouts/_sign_in.html.erb (0.5ms)
+  Rendered posts/_header.html.erb (3.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_categories.html.erb:3
+  Rendered posts/_categories.html.erb (1.1ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+  Rendered posts/_cards.html.erb (2.1ms)
+  Rendered posts/_jumbotron.html.erb (3.9ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:27
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:27
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:43
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered posts/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 67ms (Views: 60.8ms | ActiveRecord: 1.5ms)
+
+

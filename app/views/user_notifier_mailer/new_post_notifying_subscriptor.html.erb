@@ -6,9 +6,10 @@
   </head>
 
   <body>
-   <h1>Thanks for signing up, <%= @subscriptor.name %></h1>
+   <h1><%= @title %></h1>
    <p>
-    This App fucking works!!!!
+   We have a new post for you. our favorite subscriber! <br>
+   <%= link_to "Click here", @url %>
    </p>
   </body>
 </html>

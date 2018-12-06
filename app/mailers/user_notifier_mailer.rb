@@ -18,7 +18,13 @@ class UserNotifierMailer < ApplicationMailer
       @id = id
       @url = "https://amazon-cesar.herokuapp.com/posts/#{@id}"
       mail(to: @email, subject: "#{@title} - New blog post on Amazon-Center")
+    end
 
-    
+    def new_post_notifying_subscriptor(email, title, id)
+      @email = email
+      @title = title
+      @id = id
+      @url = "http://localhost:3000/posts/#{@id}"
+      mail(to: @email, subject: "#{@title} - New blog post on Amazon-Center")
     end
 end
