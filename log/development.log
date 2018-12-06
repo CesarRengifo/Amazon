@@ -8585,3 +8585,110 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 342ms (Views: 292.8ms | ActiveRecord: 3.5ms)
 
 
+Started GET "/subscriptors/new" for 127.0.0.1 at 2018-12-05 19:23:23 -0500
+Processing by SubscriptorsController#new as HTML
+  Rendering subscriptors/new.html.erb within layouts/signin
+  Rendered subscriptors/new.html.erb within layouts/signin (17.7ms)
+Completed 200 OK in 52ms (Views: 38.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/subscriptors/new" for 127.0.0.1 at 2018-12-05 19:23:23 -0500
+Processing by SubscriptorsController#new as HTML
+  Rendering subscriptors/new.html.erb within layouts/signin
+  Rendered subscriptors/new.html.erb within layouts/signin (2.4ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/subscriptors" for 127.0.0.1 at 2018-12-05 19:23:29 -0500
+Processing by SubscriptorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hi0ZOY/tzrOL8j6drZqRsNzXKn3cPhrfYRq0MZMhefYT+gFOh777vm14vwWjAdmxvQEOvAbMzNF8OzyOglxDgQ==", "subscriptor"=>{"name"=>"kiki", "email"=>"xnk92145@iencm.com"}, "commit"=>"Create Subscriptor"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subscriptors_controller.rb:11
+  [1m[36mSubscriptor Create (0.7ms)[0m  [1m[32mINSERT INTO "subscriptors" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "kiki"], ["email", "xnk92145@iencm.com"], ["created_at", "2018-12-06 00:23:29.019619"], ["updated_at", "2018-12-06 00:23:29.019619"]]
+  ↳ app/controllers/subscriptors_controller.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subscriptors_controller.rb:11
+  Rendering user_notifier_mailer/send_signup_email.html.erb within layouts/mailer
+  Rendered user_notifier_mailer/send_signup_email.html.erb within layouts/mailer (0.4ms)
+UserNotifierMailer#send_signup_email: processed outbound mail in 43.9ms
+Sent mail to xnk92145@iencm.com (154.9ms)
+Date: Wed, 05 Dec 2018 19:23:29 -0500
+From: hello@amazon-clone.com
+To: xnk92145@iencm.com
+Message-ID: <5c086c01262e6_7173fd2ce3432403151c@Cesars-MacBook-Pro.local.mail>
+Subject: Thanks for subscribe to our amazing app
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  </head>
+
+  <body>
+   <h1>Thanks for signing up, kiki</h1>
+   <p>
+    This App fucking works!!!!
+   </p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 288ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-12-05 19:23:29 -0500
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:11
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Shoes"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? ORDER BY "posts"."id" DESC LIMIT ?[0m  [["category_id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Jeans"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."category_id" = ? ORDER BY "posts"."id" DESC LIMIT ?[0m  [["category_id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:19
+  Rendering posts/index.html.erb within layouts/application
+  Rendered layouts/_sign_in.html.erb (0.7ms)
+  Rendered posts/_header.html.erb (3.6ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_categories.html.erb:3
+  Rendered posts/_categories.html.erb (1.7ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+  Rendered posts/_cards.html.erb (3.7ms)
+  Rendered posts/_jumbotron.html.erb (7.3ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:27
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:27
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:43
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered posts/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 160ms (Views: 130.2ms | ActiveRecord: 3.2ms)
+
+
