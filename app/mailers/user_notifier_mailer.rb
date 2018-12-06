@@ -11,4 +11,14 @@ class UserNotifierMailer < ApplicationMailer
 
   #  def cancel_account(user, admin, content)
   #  end
+
+    def new_post_notifying_user(email, title, id)
+      @email = email
+      @title = title
+      @id = id
+      @url = "https://amazon-cesar.herokuapp.com/posts/#{@id}"
+      mail(to: @email, subject: "TITTLE - New blog post on Amazon-Center")
+
+    
+    end
 end
