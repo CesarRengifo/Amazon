@@ -13,5 +13,7 @@ class AdminController < ApplicationController
     unless current_user.admin?
       flash[:alert] = "You don't have permissions"
       redirect_to root_path
+  
+    end
   end
 end
