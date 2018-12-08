@@ -22,10 +22,14 @@
        <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 
        <h2>Users</h2>
-
        <%= render 'users_table' %>
 
-      
+       <h2>Posts</h2>
+        <%= render 'posts_table' %>
+
+        <h2>Subscriptors</h2>
+        <%= render 'subscriptors_table' %>
+        
     </main>
   </div>
 </div>
@@ -47,7 +51,7 @@
     data: {
       labels: ["Users", "Posts", "Comments", "Subscriptors"],
       datasets: [{
-        data: [<%= @users.count %>, 15339, 21345, 18483, 24003, 23489, 24092, 12034],
+        data: [<%= @users.count %>, <%= @posts.count %>, <%= @comments.count %>, <%= @subscriptors.count %>],
         lineTension: 0,
         backgroundColor: 'transparent',
         borderColor: '#007bff',
