@@ -11,6 +11,7 @@
           <div class="btn-group mr-2">
             <button class="btn btn-sm btn-outline-secondary">Share</button>
             <button class="btn btn-sm btn-outline-secondary">Export</button>
+
           </div>
           <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
@@ -29,7 +30,7 @@
 
         <h2>Subscriptors</h2>
         <%= render 'subscriptors_table' %>
-        
+
     </main>
   </div>
 </div>
@@ -47,7 +48,7 @@
 <script>
   var ctx = document.getElementById("myChart");
   var myChart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
       labels: ["Users", "Posts", "Comments", "Subscriptors"],
       datasets: [{
@@ -72,4 +73,5 @@
       }
     }
   });
+  new Productview();
 </script>

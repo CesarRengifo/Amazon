@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Gemas
 gem 'bootstrap', '~> 4.1.3'
-gem 'jquery-rails'
+#gem 'jquery-rails'
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
@@ -67,6 +67,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'annotate'
 end
 
 group :test do
