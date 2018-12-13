@@ -6,15 +6,20 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+    member do
+      patch :publish
+    end
   end
 
   resources :subscriptors, only: [:new, :create]
 
   # # Admin Routes
   get 'admin', to: 'admin#index'
+  get 'admin/products', to: 'admin#products'
   # get 'admin/index'
   # get 'admin/show'
 
+  resources :products, only: [:new, :create]
 
   # get 'posts/index', to: 'posts#index'
   # post 'post/new', to: 'posts#new'
